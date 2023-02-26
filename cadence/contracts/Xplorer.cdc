@@ -1,4 +1,4 @@
- pub contract Xplorer {
+pub contract Xplorer {
 
     pub resource EventLocation {
         pub let id : Int
@@ -22,28 +22,28 @@
         pub let id : Int
         pub let name: String
 
-        pub var locations: @{String: EventLocation}
+        pub var locations: @[EventLocation]
 
         init(newId: Int, newName: String){
             self.id = newId
             self.name = newName
-            self.locations <- {}
+            self.locations <- []
         }       
 
-        pub fun getEventLocations():  @{String: EventLocation} {
-            var other: @{String: EventLocation} <- {}
+        pub fun getEventLocations():  @[EventLocation] {
+            var other: @[EventLocation] <- []
             self.locations <-> other
             return <- other
         }
 
-        pub fun setEventLocations(locations: @{String: EventLocation}){
+        pub fun setEventLocations(locations: @[EventLocation]){
             var other <- locations
             self.locations <-> other
             destroy  other
         }
 
-        pub fun removeEventLocations(key: String): @EventLocation?  {
-            var removed <- self.locations.remove(key: key)
+        pub fun removeEventLocations(index: Int): @EventLocation?  {
+            var removed <- self.locations.remove(at: index)
             return <- removed
         }
 
