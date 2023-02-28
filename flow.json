@@ -1,6 +1,7 @@
 {
 	"contracts": {
 		"Event": "cadence/contracts/Event.cdc",
+		"Events": "cadence/contracts/Event.cdc",
 		"ExampleNFT": {
 			"source": "",
 			"aliases": {
@@ -59,28 +60,28 @@
 	},
 	"accounts": {
 		"default": {
-			"address": "eb179c27144f783c",
-			"key": "bb17d39ff124cf72799871bce5a37db2651f254a63de61009822a319ca854db5"
+			"address": "120e725050340cab",
+			"key": "22a0481ce9d1c2f1400d77ac2883d0078a02c24f2681ec466ad976fd66b160a7"
 		},
 		"emulator-account": {
 			"address": "f8d6e0586b0a20c7",
 			"key": "6d12eebfef9866c9b6fa92b97c6e705c26a1785b1e7944da701fc545a51d4673"
 		},
-		"testnet-account" :{
-			"address": "0x14ba32c4cb0532ae",
-			"key" : "d2f3d628da0fc8da9172964982a7c543df268191973e50b89874bcbc4670fda4"
+		"testnet-account": {
+			"address": "0x5dc67c8e2d74414b",
+			"key": "17ed7f79678c591f796bf296338359306658dbaf9eb138216d6105ba832ff994"
 		}
 	},
 	"deployments": {
 		"emulator": {
 			"default": [
-				"Event",
+				"Events",
 				"Xplorer"
 			]
 		},
-		"testnet" : {
+		"testnet": {
 			"testnet-account": [
-				"Event",
+				"Events",
 				"Xplorer"
 			]
 		}
