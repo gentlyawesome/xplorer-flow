@@ -1,24 +1,32 @@
 import Events from "../contracts/Event.cdc"
-import Xplorer from "../contracts/Xplorer.cdc" 
 
 transaction {
 
   prepare(acct: AuthAccount) {
-    let xplorer <- Xplorer.new()
+    let events <- Events.new()
     let newEvent <- Events.createEvent(id: 123123123, name: "Event1", price: "Chocolate")
 
-    let eventLocations <- newEvent.getEventLocations()
+    let eventLocations <- [<- Events.createEventLocation(
+          id: 1,
+          lat: 16.389231,
+          lng: 120.58796,
+        ),<- Events.createEventLocation(
+          id: 2,
+          lat: 16.389391,
+          lng: 120.587785,
+        ),<- Events.createEventLocation(id:3,
+          lat: 16.38932,
+          lng: 120.58822,
+        )
 
-    eventLocations.append(<- Events.createEventLocation(id: 123123, lat: 16.2840, lng: 206.0394)) 
-    eventLocations.append(<- Events.createEventLocation(id: 123123, lat: 18.2840, lng: 210.0394))
+    ]
 
     newEvent.setEventLocations(locations: <- eventLocations)
+    events.setEvents(<-newEvent)
 
-    xplorer.setEvents(<- newEvent)
-
-    acct.save(<- xplorer, to:/storage/events)
-    acct.link<&Events.Event>(/public/events, target: /storage/events)
-
+    acct.save(<- events, to:Events.privatePath)
+    acct.link<&Events.Base{Events.Public}>(Events.publicPath, target: Events.privatePath)
+ 
   }
 }
  

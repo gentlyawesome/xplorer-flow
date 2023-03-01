@@ -1,89 +1,33 @@
 {
-	"contracts": {
-		"Event": "cadence/contracts/Event.cdc",
-		"Events": "cadence/contracts/Event.cdc",
-		"ExampleNFT": {
-			"source": "",
-			"aliases": {
-				"emulator": "f8d6e0586b0a20c7"
-			}
-		},
-		"FUSD": {
-			"source": "",
-			"aliases": {
-				"emulator": "f8d6e0586b0a20c7"
-			}
-		},
-		"FlowToken": {
-			"source": "",
-			"aliases": {
-				"emulator": "0ae53cb6e3f42a79"
-			}
-		},
-		"FungibleToken": {
-			"source": "",
-			"aliases": {
-				"emulator": "ee82856bf20e2aa6"
-			}
-		},
-		"MetadataViews": {
-			"source": "",
-			"aliases": {
-				"emulator": "f8d6e0586b0a20c7"
-			}
-		},
-		"NFTStorefront": {
-			"source": "",
-			"aliases": {
-				"emulator": "f8d6e0586b0a20c7"
-			}
-		},
-		"NFTStorefrontV2": {
-			"source": "",
-			"aliases": {
-				"emulator": "f8d6e0586b0a20c7"
-			}
-		},
-		"NonFungibleToken": {
-			"source": "",
-			"aliases": {
-				"emulator": "f8d6e0586b0a20c7"
-			}
-		},
-		"Xplorer": "cadence/contracts/Xplorer.cdc",
-		"XplorerV2": "cadence/contracts/Xplorer.cdc"
-	},
-	"networks": {
-		"emulator": "127.0.0.1:3569",
-		"mainnet": "access.mainnet.nodes.onflow.org:9000",
-		"testnet": "access.devnet.nodes.onflow.org:9000"
-	},
-	"accounts": {
-		"default": {
-			"address": "120e725050340cab",
-			"key": "22a0481ce9d1c2f1400d77ac2883d0078a02c24f2681ec466ad976fd66b160a7"
-		},
-		"emulator-account": {
-			"address": "f8d6e0586b0a20c7",
-			"key": "6d12eebfef9866c9b6fa92b97c6e705c26a1785b1e7944da701fc545a51d4673"
-		},
-		"testnet-account": {
-			"address": "0x5dc67c8e2d74414b",
-			"key": "17ed7f79678c591f796bf296338359306658dbaf9eb138216d6105ba832ff994"
-		}
-	},
-	"deployments": {
-		"emulator": {
-			"default": [
-				"Events",
-				"Xplorer"
-			]
-		},
-		"testnet": {
-			"testnet-account": [
-				"Events",
-				"Xplorer"
-			]
-		}
-	}
+  "contracts": {
+    "Events": "cadence/contracts/Event.cdc"
+  },
+  "networks": {
+    "emulator": "127.0.0.1:3569",
+    "mainnet": "access.mainnet.nodes.onflow.org:9000",
+    "sandboxnet": "access.sandboxnet.nodes.onflow.org:9000",
+    "testnet": "access.devnet.nodes.onflow.org:9000"
+  },
+  "accounts": {
+    "default": {
+      "address": "f3fcd2c1a78f5eee",
+      "key": "6be40cfeb6177196bd00400032839a5bad902c935cb68fe86d5c5432b0d73965"
+    },
+    "emulator-account": {
+      "address": "f8d6e0586b0a20c7",
+      "key": "a31602d4c6e6043831109be18c2cfdb767f03ca9f221ea0648d8944801908823"
+    },
+    "testnet-account": {
+      "address": "0x541ae074eb3b46ba",
+      "key": "0d03ba830d0f5d3604d0d8564788031b6bc35ca60181c20e93b569b519e71ae5"
+    }
+  },
+  "deployments": {
+    "emulator": {
+      "default": ["Events"]
+    },
+    "testnet": {
+      "testnet-account": ["Events"]
+    }
+  }
 }
